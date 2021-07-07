@@ -3,30 +3,27 @@
 import './App.css';
 import Header from './Header';
 import Home from "./Home";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Checkout from "./Checkout";
 
 
 function App() {
   return (
     //BEM
-    <Router>
-    <div className="app">
+    <BrowserRouter>
+      <Header/>
+    <Switch>
+        <Route path="/" exact>
+          <Home/> 
+        </Route>
+        <Route path= "/checkout" exact>
+        <Checkout/>
+        </Route>
+     </Switch>
    
-      <Switch>
-        <Route Path="/">
-        <Header/>
-         <Home />
-        </Route>
-        <Route Path="/Checkout">
-        <Header/>
-         <Checkout/> 
-        </Route>
-        
-      </Switch>
-   </div>
-   </Router>
+   </BrowserRouter>
   );
 }
+
 
 export default App;
