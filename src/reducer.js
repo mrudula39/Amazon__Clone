@@ -1,5 +1,6 @@
 export const initialState =  {
     basket: [],
+    user :null
 };
 //SELECTOR
 export const getBasketTotal = (basket) =>
@@ -18,6 +19,7 @@ case "REMOVE_FROM_BASKET":
         (basketItem) => basketItem.id === action.id
         );
 let newBasket = [...state.basket];
+
 if( index >= 0){
     newBasket.splice(index,1);
 
@@ -32,6 +34,11 @@ return{
     ...state,
     basket:newBasket
 
+}
+case "SET_USER":
+return{
+    ...state,
+    user : action.user
 }
 
 
