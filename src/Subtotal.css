@@ -17,6 +17,7 @@
     margin-right : 5px;
 }
 .Subtotal > button {
+    cursor: pointer;
     background:#f0c14b;
     border-radius:2px;
     width:100%;
